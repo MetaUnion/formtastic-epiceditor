@@ -6,9 +6,24 @@ This project rocks and uses MIT-LICENSE.
 
     gem "formtastic-epiceditor"
 
-On pages where you wish to use Epic Editor, add the following to the pages 
-javascript:
+### Vanilla Formtastic
+
+Add Epic Editor to the javascript:
 
     //= require epiceditor/epiceditor
 
+### Active Admin
 
+Add Epic Editor to the javascript:
+
+    //= require epiceditor/epiceditor
+
+Add some styles:
+
+    @import "epiceditor/activeadmin";
+
+## Usage
+
+Too easy:
+
+    f.input :my-input, :as => :epic_editor
