@@ -1,6 +1,5 @@
 # app/inputs/my_special_string_input.rb
 # use with :as => :my_special_string
-puts 'in'
 class EpicEditorInput < Formtastic::Inputs::TextInput
   def input_html_options
     {
