@@ -30,3 +30,21 @@ html, body, iframe, div { margin:0; padding:0; }
   display: none;
 }
 
+
+/*  
+ * Formtastic hacks
+ */
+
+[id*="-epiceditor"]{
+  border: 1px solid #0C0C9E;
+  *zoom: 1;
+}
+[id*="-epiceditor"]:before,
+[id*="-epiceditor"]:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+[id*="-epiceditor"]:after {
+  clear: both;
+}
+

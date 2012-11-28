@@ -10,7 +10,7 @@ class EpicEditorInput < Formtastic::Inputs::TextInput
   def to_html
     input_wrapping do
       label_html <<
-      "<div id='#{input_html_options[:id]}-epiceditor' style='width:76%;float:left;border:1px solid #C9D0D6;'></div>".html_safe <<
+      "<div id='#{input_html_options[:id]}-epiceditor' class='epiceditor-container'></div><div style='clear:both;'></div>".html_safe <<
       builder.hidden_field(method, input_html_options) <<
       buildInitScript(input_html_options[:id])
     end
