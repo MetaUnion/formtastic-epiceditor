@@ -9,12 +9,10 @@ Gem::Specification.new do |s|
   s.version     = FormtasticEpiceditor::VERSION
   s.authors     = ["Ad Taylor"]
   s.email       = ["ad@metaunion.co.uk"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/MetaUnion/formtastic-epiceditor"
   s.summary     = "Adds Epic Editor as a content type to formtastic."
-  # s.description = "TODO: Description of FormtasticEpiceditor."
 
   s.files = `git ls-files`.split("\n")
-    # Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 3.2.9"
