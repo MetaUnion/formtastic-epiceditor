@@ -34,7 +34,10 @@ class EpicEditorInput < Formtastic::Inputs::TextInput
           }
         };
 
-      var editor#{randNum} = new EpicEditor(opts).load();
+      var epicEditorInstances = epicEditorInstances || [],
+          editor#{randNum} = new EpicEditor(opts).load();
+
+      epicEditorInstances.push(editor#{randNum});
 
       editor#{randNum}.on('update', function(update){
         el#{randNum}.val(update.content);
