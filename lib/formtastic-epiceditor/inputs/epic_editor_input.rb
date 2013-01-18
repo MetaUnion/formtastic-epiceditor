@@ -40,7 +40,8 @@ class EpicEditorInput < Formtastic::Inputs::TextInput
       epicEditorInstances.push(editor#{randNum});
 
       editor#{randNum}.on('update', function(update){
-        el#{randNum}.val(update.content);
+        var str = editor#{randNum}.exportFile();
+        el#{randNum}.val(str);
       }).importFile('#{id}-#{randNum}',html);
     </script>
     """.html_safe
