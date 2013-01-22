@@ -23,15 +23,14 @@ class EpicEditorInput < Formtastic::Inputs::TextInput
     <script>
     var el#{randNum} = $('##{id}'),
         html = el#{randNum}.val(),
-        emptyVar = '',
         opts = {
           container: '#{id}-epiceditor',
           clientSideStorage: false,
-          basePath: '',
+          basePath: '#{ActionController::Base.helpers.asset_path('epiceditor')}',
           theme: {
-            base:'#{ActionController::Base.helpers.asset_path('epiceditor/themes/base/epiceditor.css')}',
-            preview:'#{ActionController::Base.helpers.asset_path('epiceditor/themes/preview/preview-dark.css')}',
-            editor:'#{ActionController::Base.helpers.asset_path('epiceditor/themes/editor/epic-light.css')}'
+            base:'/themes/base/epiceditor.css',
+            preview:'/themes/preview/preview-dark.css',
+            editor:'/themes/editor/epic-light.css'
           }
         };
 
