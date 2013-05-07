@@ -17,6 +17,13 @@ class EpicEditorInput < Formtastic::Inputs::TextInput
   end
 
   private
+
+  def assets_base_path
+    example_path = '/themes/base/epiceditor.css'
+    precompiled_example_path = ActionController::Base.helpers.asset_path('epiceditor' + example_path)
+    File.dirname(precompiled_example_path).gsub(File.dirname(example_path), '')
+  end
+
   def buildInitScript(id)
     randNum = rand(1..100000)
     return """
@@ -26,7 +33,7 @@ class EpicEditorInput < Formtastic::Inputs::TextInput
         opts = {
           container: '#{id}-epiceditor',
           clientSideStorage: false,
-          basePath: '#{ActionController::Base.helpers.asset_path('epiceditor')}',
+          basePath: '#{assets_base_path}',
           theme: {
             base:'/themes/base/epiceditor.css',
             preview:'/themes/preview/preview-dark.css',
