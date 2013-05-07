@@ -6,5 +6,9 @@ module FormtasticEpiceditor
   class Engine < ::Rails::Engine
     require "formtastic"
     require "formtastic-epiceditor/inputs/epic_editor_input.rb"
+
+    initializer "formtastic-epiceditor.assets.precompile" do |app|
+      app.config.assets.precompile += %w(epiceditor/themes/**/*)
+    end
   end
 end
