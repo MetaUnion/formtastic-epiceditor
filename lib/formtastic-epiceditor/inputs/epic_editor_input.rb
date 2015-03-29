@@ -1,6 +1,8 @@
 # app/inputs/my_special_string_input.rb
 # use with :as => :my_special_string
+
 class EpicEditorInput < Formtastic::Inputs::TextInput
+
   def input_html_options
     {
       :class => "epiceditor"
@@ -26,6 +28,9 @@ class EpicEditorInput < Formtastic::Inputs::TextInput
 
   def buildInitScript(id)
     randNum = rand(1..100000)
+    editor_css = ActionController::Base.helpers.asset_path "epiceditor/themes/base/epiceditor.css"
+    dark_css = ActionController::Base.helpers.asset_path "epiceditor/themes/preview/preview-dark.css"
+    light_css = ActionController::Base.helpers.asset_path "epiceditor/themes/editor/epic-light.css"
     return """
     <script>
     var el#{randNum} = $('##{id}'),
@@ -33,11 +38,11 @@ class EpicEditorInput < Formtastic::Inputs::TextInput
         opts = {
           container: '#{id}-epiceditor',
           clientSideStorage: false,
-          basePath: '#{assets_base_path}',
+          basePath: '',
           theme: {
-            base:'/themes/base/epiceditor.css',
-            preview:'/themes/preview/preview-dark.css',
-            editor:'/themes/editor/epic-light.css'
+            base:'#{editor_css}',
+            preview:'#{dark_css}',
+            editor:'#{light_css}'
           }
         };
 

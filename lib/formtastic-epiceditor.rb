@@ -9,6 +9,7 @@ module FormtasticEpiceditor
 
     initializer "formtastic-epiceditor.assets.precompile" do |app|
       app.config.assets.precompile += %w(epiceditor/themes/**/*)
+      app.config.assets.precompile += %w(epiceditor/*.png)
     end
   end
 end
